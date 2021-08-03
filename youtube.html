@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <title>Youtube</title>
+    <style>
+        /* Style the navigation menu */
+        
+        *::before,
+        *::after {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-size: inherit;
+            font-family: 'Roboto';
+            color: #fff;
+        }
+        
+        html {
+            font-size: 10px;
+        }
+        
+        strong {
+            font-weight: 500;
+        }
+        
+        .btn {
+            width: 24px;
+            height: 24px;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .container {
+            min-height: 100vh;
+            background-color: #1f1f1f;
+            width: 100%;
+        }
+        /* header style */
+        
+        header {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 98.5%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 5.6rem;
+            background-color: #282828fa;
+            z-index: 69;
+            margin-left: 0.5%;
+        }
+        
+        .menu-btn {
+            margin-right: 2.4rem;
+            margin: 0 2.4rem;
+        }
+        
+        .home-btn {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 80px;
+            font-size: 1.3rem;
+            font-weight: 500;
+        }
+        
+        .search-bar {
+            width: 700px;
+            max-width: 700px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+        }
+        
+        #videos {
+            display: grid;
+            grid-gap: 1%;
+            grid-template-columns: 23% 23% 23% 23%;
+            margin: auto;
+            padding-left: 5%;
+            margin-bottom: 0%;
+            padding-top: 5%;
+        }
+        
+        #videos>div {
+            width: 100%;
+            height: 200px;
+            margin-bottom: 1%;
+            margin-top: 2%;
+        }
+        
+        h1 {
+            color: white;
+        }
+        
+        .user-options {
+            margin-right: 2%;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Youtube Videos -->
+    <div class="container">
+        <nav>
+            <i class="fas fa-home"></i>
+        </nav>
+        <header>
+            <button class="btn menu-btn">
+            <img src="images/menu.svg" alt="menu" />
+          </button>
+            <button class="btn home-btn">
+            <img src="images/youtube.svg" alt="youtube logo" />
+            <h1>YouTube</h1>
+          </button>
+
+            <div class="search-bar">
+                <input class="search-input" id="search" type="text" placeholder="Search" />
+                <button class="btn search-btn" onclick="requestVideos()">
+              <img src="images/magnify.svg"/>
+            </button>
+
+                <button style="margin-left: 25%; margin-right: -10%;" onclick="popularVideos()">Most Popular</button>
+            </div>
+            <div class="user-options">
+                <button class="btn add-video-btn">
+              <img src="images/video-plus.svg"/>
+            </button>
+                <button class="btn apps-btn">
+              <img src="images/apps.svg"/>
+            </button>
+                <button class="btn options-btn">
+              <img src="images/dots-vertical.svg"/>
+            </button>
+                <button class="btn sign-btn">
+              <img href="https://accounts.google.com/signin/v2/identifier?service=youtube&uilel=3&passive=true&continue=https%3A%2F%2Fwww.youtube.com%2Fsignin%3Faction_handle_signin%3Dtrue%26app%3Ddesktop%26hl%3Den%26next%3Dhttps%253A%252F%252Fwww.youtube.com%252Findex&hl=en&ec=65620&flowName=GlifWebSignIn&flowEntry=ServiceLogin" src="images/account-circle.svg"/>
+      
+            </button>
+            </div>
+        </header>
+
+        <div id="videos"></div>
+</body>
+
+</html>
+<script src="youtube.js"></script>
